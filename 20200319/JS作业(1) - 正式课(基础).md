@@ -79,6 +79,8 @@ B();
 ```
 ![第四题图片.png](https://upload-images.jianshu.io/upload_images/16761151-5beabb5efca564a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+函数的作用域在你写代码的时候就已经确定了, 跟在哪调用没关系!
+
 ## 5. 写出下面代码输出的结果 （画图）
 ```javascript
 var a=1;
