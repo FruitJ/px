@@ -384,15 +384,23 @@ new Foo().getName(); // 3
 new new Foo().getName(); // 3
 ```
 -1). `Foo.getName();` 不解释, 直接调用的 `Foo.getName` 函数 -> 打印 2。
+
 -2). `getName();` 这块涉及变量提升, 声明式的被先声明 + 定义了, 所以代码执行到表达式那里就被重新赋值了, 所以打印的是 4。
+
 -3). `Foo().getName();` 单纯调用函数返回的 this 指向 window, 所以这里执行完 Foo(), 此时全局的上下文中的 getName 方法被替换成了 `function (){console.log(1);}` 所以再执行输出 1 。
+
 -4).  `getName();` 访问的也是全局的所以输出 1。
+
 -5).  `new Foo.getName();` 是先将 `Foo.getName` 划分为一个整体, 然后才 new 的, 换句话说 new 的是 `Foo.getName` 而不是 `Foo`。所以输出 2。
+
 -6).  `new Foo().getName();` 先实例化 Foo(), 然后调用其实例的原型上的 `getName` 方法。故输出 3 。
+
 -7). `new new Foo().getName();` 先执行 `new Foo()`得到 Foo 的实例, 然后将 `Foo的实例.getName()` 划分为一个整体，最后执行最外层的 `new Foo的实例.getName()`， 也就是 new 一个 Foo 实例所属原型上的 `getName` 方法, 所以最后输出 3。
 
 本题 4、5、6 涉及到运算符的优先级 : 
+
 `new 不代参数列表 < new 代参数列表` => `new Xxx < new Xxx()`
+
 `new 与 调用操作符( . ) 是平级的, 但 点儿 是从左到右执行的`。
 
 详见 MDN 文档  --- [运算符的优先级](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
