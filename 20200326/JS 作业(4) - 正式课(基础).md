@@ -312,11 +312,11 @@ var a = (function() {
     let count = 0;
     return { // valueOf 与 toString 任选其一即可(默认走 valueOf)
         toString() { 
-            return ++count;
+        	return ++count;
         },
         valueOf() {
-			return ++count;
-		}
+		return ++count;
+	}
     }
 })();
 if (a == 1 && a == 2 && a == 3) {
@@ -328,7 +328,7 @@ if (a == 1 && a == 2 && a == 3) {
 var a = {
 	count: 1,
 	toString() {
-		return a.count++;
+		return this.count++;
 	}
 };
 if (a == 1 && a == 2 && a == 3) {
