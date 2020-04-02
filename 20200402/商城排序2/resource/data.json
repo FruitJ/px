@@ -1,0 +1,72 @@
+[{
+    "pic_url": "../img/image-1.png",
+    "price": 899,
+    "goodsName": "荣耀8X",
+    "total": 1975,
+    "time": "2015-03-02",
+    "isSpecial": false
+}, {
+    "pic_url": "../img/image-2.png",
+    "price": 5099,
+    "goodsName": "HUAWEI Mate 20 Pro",
+    "total": 100,
+    "time": "2018-04-01",
+    "isSpecial": false
+},{
+    "pic_url": "../img/image-3.png",
+    "price": 2199,
+    "goodsName": "荣耀V20",
+    "total": 3456,
+    "time": "2019-10-01",
+    "isSpecial": true
+},{
+    "pic_url": "../img/image-4.png",
+    "price": 1099,
+    "goodsName": "荣耀9X",
+    "total": 6000,
+    "time": "2020-03-31",
+    "isSpecial": false
+},{
+    "pic_url": "../img/image-5.png",
+    "price": 4488,
+    "goodsName": "HUAWEI P30 Pro",
+    "total": 960,
+    "time": "1998-05-03",
+    "isSpecial": false
+},
+{
+    "pic_url": "../img/image-1.png",
+    "price": 899,
+    "goodsName": "荣耀8X",
+    "total": 1975,
+    "time": "2015-03-02",
+    "isSpecial": false
+}, {
+    "pic_url": "../img/image-2.png",
+    "price": 5099,
+    "goodsName": "HUAWEI Mate 20 Pro",
+    "total": 100,
+    "time": "2018-04-01",
+    "isSpecial": false
+},{
+    "pic_url": "../img/image-3.png",
+    "price": 2199,
+    "goodsName": "荣耀V20",
+    "total": 3456,
+    "time": "2019-10-01",
+    "isSpecial": true
+},{
+    "pic_url": "../img/image-4.png",
+    "price": 1099,
+    "goodsName": "荣耀9X",
+    "total": 6000,
+    "time": "2020-03-31",
+    "isSpecial": false
+},{
+    "pic_url": "../img/image-5.png",
+    "price": 4488,
+    "goodsName": "HUAWEI P30 Pro",
+    "total": 960,
+    "time": "1998-05-03",
+    "isSpecial": false
+}]

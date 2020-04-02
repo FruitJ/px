@@ -1,0 +1,92 @@
+.triangle {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  right: -15px;
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: solid;
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.container {
+  padding: 0;
+}
+.container nav #navbarSupportedContent .nav-item {
+  position: relative;
+}
+.container nav #navbarSupportedContent .nav-item .price-sort-btns {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+}
+.container nav #navbarSupportedContent .nav-item .price-sort-btns i.prev {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  right: -15px;
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: solid;
+  top: 7px;
+  border-color: transparent transparent #999 transparent;
+}
+.container nav #navbarSupportedContent .nav-item .price-sort-btns i.next {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  right: -15px;
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: solid;
+  top: 19px;
+  border-color: #999 transparent transparent transparent;
+}
+.container nav #navbarSupportedContent .nav-item:nth-child(1) {
+  margin-right: 20px;
+}
+.container .productbox {
+  display: flex;
+  position: relative;
+  margin: 10px auto;
+  flex-wrap: wrap;
+}
+.container .productbox .card {
+  margin-right: 1%;
+  margin-bottom: 10px;
+  top: 0;
+  left: 0;
+  width: 19.2%;
+  transition-duration: 0.8s;
+}
+.container .productbox .card .card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.container .productbox .card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.07);
+  transform: translate3d(0px, -2px, 0px);
+  transition-duration: 0.8s;
+  cursor: pointer;
+}
+.container .productbox .card .card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.container .productbox .card:nth-child(5n) {
+  margin-right: 0;
+}
+@media (min-width: 768px) {
+  /* 当设备宽度 >= 768px */
+  .container {
+    max-width: 900px;
+  }
+}

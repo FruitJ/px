@@ -1,0 +1,99 @@
+.triangle {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    right: -15px;
+    width: 0;
+    height: 0;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.container {
+    padding: 0;
+
+    nav {
+
+        & #navbarSupportedContent {
+            .nav-item {
+
+                position: relative;
+
+                .price-sort-btns {
+                    position: absolute;
+                    top: 2px;
+                    right: 10px;
+
+                    i.prev {
+                        .triangle;
+                        top: 7px;
+                        border-color: transparent transparent #999 transparent;
+                    }
+
+                    i.next {
+                        .triangle;
+                        top: 19px;
+                        border-color: #999 transparent transparent transparent;
+                    }
+                }
+
+                &:nth-child(1) {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+
+
+    .productbox {
+        display: flex;
+        position: relative;
+        margin: 10px auto;
+        flex-wrap: wrap;
+
+        .card {
+            margin-right: 1%;
+            margin-bottom: 10px;
+            top: 0;
+            left: 0;
+            width: 19.2%;
+            transition-duration: 0.8s;
+
+            .card-title {
+                .ellipsis;
+            }
+
+            &:hover {
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.07);
+                transform: translate3d(0px, -2px, 0px);
+                transition-duration: 0.8s;
+                cursor: pointer;
+            }
+
+            .card-text {
+
+                .ellipsis;
+            }
+        }
+
+        .card:nth-child(5n) {
+            margin-right: 0;
+        }
+    }
+}
+
+
+@media (min-width: 768px) {
+
+    /* 当设备宽度 >= 768px */
+    .container {
+        max-width: 900px;
+
+    }
+}
