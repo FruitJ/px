@@ -1,0 +1,77 @@
+html,body {
+    width: 100%;
+    background-color: #F5F5F5;
+}
+/* 容器区域开始 */
+#container {
+    margin: 35px auto;
+    width: 1250px;
+    background-color: yellow;
+
+    /* 导航条区域开始 */
+    nav.nav {
+        padding: 0 10px;
+        width: 1230px;
+        height: 35px;
+        background-color: #FFF;
+
+        ul {
+
+            li {
+                float: left;
+                margin-right: 10px;
+                font-size: 16px;
+                line-height: 35px;
+                text-align: center;
+                cursor: pointer;
+            }
+        }
+    }
+    /* 导航条区域结束 */
+    /* 主体区域开始 */
+    .content {
+        width: 100%;
+
+        ul {
+
+            margin-top: 25px;
+            li {
+                float: left;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                width: 242px;
+                height: 362px;
+                background-color: #FFF;
+
+                img{
+                    display: block;
+                    margin: 20px auto;
+                    width: 180px;
+                    height: 180px;
+                }
+                span {
+                    display: block;
+                    margin-left: 32px;
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: gray;
+
+                    &.name {
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                    &.price {
+                        color: red;
+                    }
+                }
+                &:nth-child(5n) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    /* 主体区域结束 */
+}
+/* 容器区域结束 */

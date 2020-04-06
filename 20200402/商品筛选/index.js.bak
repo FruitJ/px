@@ -30,8 +30,8 @@ let shopFilter = (function () {
         if (temp.length !== 0) {
             _changeStatus(temp[0], false, "#000");
         }
-        // target.dataset.isEnabled = true;
-        // target.style.color = "red";
+        target.dataset.isEnabled = true;
+        target.style.color = "red";
         _changeStatus(target, true, "red");
     }
 

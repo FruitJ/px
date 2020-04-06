@@ -1,0 +1,69 @@
+html,
+body {
+  width: 100%;
+  background-color: #F5F5F5;
+}
+/* 容器区域开始 */
+#container {
+  margin: 35px auto;
+  width: 1250px;
+  background-color: yellow;
+  /* 导航条区域开始 */
+  /* 导航条区域结束 */
+  /* 主体区域开始 */
+  /* 主体区域结束 */
+}
+#container nav.nav {
+  padding: 0 10px;
+  width: 1230px;
+  height: 35px;
+  background-color: #FFF;
+}
+#container nav.nav ul li {
+  float: left;
+  margin-right: 10px;
+  font-size: 16px;
+  line-height: 35px;
+  text-align: center;
+  cursor: pointer;
+}
+#container .content {
+  width: 100%;
+}
+#container .content ul {
+  margin-top: 25px;
+}
+#container .content ul li {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 242px;
+  height: 362px;
+  background-color: #FFF;
+}
+#container .content ul li img {
+  display: block;
+  margin: 20px auto;
+  width: 180px;
+  height: 180px;
+}
+#container .content ul li span {
+  display: block;
+  margin-left: 32px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: gray;
+}
+#container .content ul li span.name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#container .content ul li span.price {
+  color: red;
+}
+#container .content ul li:nth-child(5n) {
+  margin-right: 0;
+}
+/* 容器区域结束 */
