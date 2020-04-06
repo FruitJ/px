@@ -5,7 +5,7 @@
 
 - 1). 编写一个正则   可以匹配用户输入的手机号是否合法
 手机号码规则来源 : 
-![Alt text](./1586166296052.png)
+![1586166296052.png](https://upload-images.jianshu.io/upload_images/16761151-7ad319e5449f6555.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 **分析 :**
 当前号段为 : 
 > 130 131 132 133 134 135 136 137 138 139
@@ -25,7 +25,7 @@ console.log(reg.exec(str)); // ["17803218829", index: 0, input: "17803218829"]
 str = "14603218829"; // 号段不存在的号码
 console.log(reg.exec(str)); // null
 ```
-![Alt text](./1586168951519.png)
+![1586168951519.png](https://upload-images.jianshu.io/upload_images/16761151-e4f33dee1f2f0560.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - -2). 编写一个正则   可以匹配有效数字
 因未说明该题有效数字的定义, 姑且认为这些值为有效数字 : `0.1`、`1`、`+0.1`、`-.1`、`-1`、`+1`、`8.95`
@@ -45,7 +45,7 @@ console.log(reg.exec("-156")); // ["-156", index: 0, input: "-156"]
 console.log(reg.exec("5.")); // null
 console.log(reg.exec("5+")); // null
 ```
-![Alt text](./1586170588233.png)
+![1586170588233.png](https://upload-images.jianshu.io/upload_images/16761151-b3e54eaf9d1d8f4c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 -  -3). 编写一个正则  可以匹配 QQ 邮箱
 QQ邮箱 @ 符前面可以是 纯数字也可以是纯字母
@@ -56,7 +56,7 @@ console.log(reg.exec("1848661762@qq.com")); // ["1848661762@qq.com", "1848661762
 console.log(reg.exec("pgsyj@qq.com")); // ["pgsyj@qq.com", "pgsyj", index: 0, input: "pgsyj@qq.com"]
 console.log(reg.exec("pgsyj2@qq.com")); // null
 ```
-![Alt text](./1586171886954.png)
+![1586171886954.png](https://upload-images.jianshu.io/upload_images/16761151-9cd6be64df1e9daa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 - -4). 编写一个正则   匹配身份证号码
 身份证正则构成 :
 > 前 6 位 : 地址码 【数字 => [1-9]\d{5}】
@@ -72,7 +72,7 @@ let reg = /[1-9]\d{5}(?:18|19|20)\d{2}(?:0[1-9]|1[0-2])(?:(?:[0-2][1-9])|[1,2,3]
 console.log(reg.exec("130827197608050032")); // ["130827197608050032", index: 0, input: "130827197608050032"]
 console.log(reg.exec("130824129608050032")); // null
 ```
-![Alt text](./1586172896406.png)
+![1586172896406.png](https://upload-images.jianshu.io/upload_images/16761151-39dae776cb158cd2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - -5). 编写一个正则   匹配 18 ~ 65 之间的整数
 得正则为 : `/^(1[89]|[2-5]\d|6[1-5])$/`
@@ -87,7 +87,7 @@ console.log(reg.exec("52")); // ["52", "52", index: 0, input: "52"]
 console.log(reg.exec("65")); // ["65", "65", index: 0, input: "65"]
 console.log(reg.exec("66")); // null
 ```
-![Alt text](./1586173302628.png)
+![1586173302628.png](https://upload-images.jianshu.io/upload_images/16761151-e48e1bbfbe23befb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - -6). 编写一个正则   匹配用户输入的密码是否符合规则(8~18位、既有大写字母、小写字母和数字)
 得正则为 : `/(?!^[a-z0-9]{8,18}$)(?!^[A-Z0-9]{8,18}$)(?!^[a-zA-Z]{8,18}$)^[a-zA-Z0-9]{8,18}$/`
@@ -101,5 +101,5 @@ console.log(reg.exec("12121212s")); // null
 console.log(reg.exec("12121212S")); // null
 console.log(reg.exec("12121212Sa")); // ["12121212Sa", index: 0, input: "12121212Sa"]
 ```
-![Alt text](./1586173868103.png)
+![1586173868103.png](https://upload-images.jianshu.io/upload_images/16761151-04b967e207a3ac37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
