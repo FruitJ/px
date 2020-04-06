@@ -77,7 +77,7 @@ console.log(reg.exec("130824129608050032")); // null
 ![1586172896406.png](https://upload-images.jianshu.io/upload_images/16761151-39dae776cb158cd2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - -5). 编写一个正则   匹配 18 ~ 65 之间的整数
-得正则为 : `/^(1[89]|[2-5]\d|6[1-5])$/`
+得正则为 : `/^(1[89]|[2-5]\d|6[0-5])$/`
 ```javascript
 let reg = /^(1[89]|[2-5]\d|6[0-5])$/;
 console.log(reg.exec("17")); // null
