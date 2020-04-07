@@ -69,6 +69,6 @@ console.log(url.queryParams());
 ![image.png](https://upload-images.jianshu.io/upload_images/16761151-19e9c0573b16ab6f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![image.png](https://upload-images.jianshu.io/upload_images/16761151-e1e03872f67c8fa7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
-
+## 关于支持正则表达式的 4 个方法情况, 稍后会更新一篇博文会提及到这块, 博文发出时同步更新地址 :
+地址 : 
 
