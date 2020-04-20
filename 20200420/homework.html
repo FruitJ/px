@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>作业</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 300%;
+            background: -webkit-linear-gradient(top left, red, green, blue, orange, pink);
+        }
+
+        #container {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            opacity: 0;
+            color: #FFF;
+            background-color: green;
+        }
+
+        .back {
+            display: none;
+            position: fixed;
+            right: 5px;
+            bottom: 50px;
+            border: 2px solid gray;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 16px;
+            font-weight: bolder;
+            color: #FFF;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        点我啊~
+    </div>
+    <div class="back">
+        Top
+    </div>
+    <script>
+        /**
+         * @name fadeIn
+         * @description 元素渐显
+         * @param {Element} ele : 一个待加透明度渐变的 dom 节点 
+         * @param {number} time : 渐变总时长 
+         */
+        function fadeIn(ele, time) {
+            const INTERVAL_TIME = 10; // 动作执行间隔
+            let step = 0;
+            let timer = setInterval(() => {
+                step += 1 / (time / 10); // 累加透明度
+                if (step >= 1) clearInterval(timer);
+                ele.style.opacity = `${ step }`;
+            }, INTERVAL_TIME);
+        }
+        fadeIn(document.querySelector("#container"), 1000);
+
+        // 回到顶部
+        let html = document.documentElement,
+            back = document.querySelector(".back");
+        window.addEventListener('scroll', function () { // 控制回到顶部图标样式
+            if (html.clientHeight <= html.scrollTop) {
+                back.style.display = "block";
+            } else {
+                back.style.display = "none";
+            }
+        }, false);
+
+        let timer2 = null;
+        back.addEventListener('click', function () { // 回到顶部
+            let count = html.scrollTop;
+            let step = count / (1000 / 10);
+            timer2 = setInterval(() => {
+                if (count <= 0) clearInterval(timer2);
+                count -= step;
+                html.scrollTop = count;
+            }, 10); 
+        }, false);
+    </script>
+</body>
+
+</html>
