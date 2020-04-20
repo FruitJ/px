@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>作业</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 300%;
+            background: -webkit-linear-gradient(top left, red, green, blue, orange, pink);
+        }
+
+        #container {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 32.5px;
+            opacity: 0;
+            color: #FFF;
+            background-color: green;
+        }
+
+        .back {
+            display: none;
+            position: fixed;
+            right: 5px;
+            bottom: 50px;
+            border: 2px solid gray;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 16px;
+            font-weight: bolder;
+            color: #FFF;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        请向下滚动, 点击右下角的回到顶部!
+    </div>
+    <div class="back">
+        Top
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        /**
+         * @name fadeIn
+         * @description 元素渐显
+         * @param {Element} ele : 一个待加透明度渐变的 dom 节点 
+         * @param {number} time : 渐变总时长 
+         */
+        function fadeIn(ele, time) {
+            const INTERVAL_TIME = 10; // 动作执行间隔
+            let step = 0;
+            let timer = setInterval(() => {
+                step += 1 / (time / 10); // 累加透明度
+                if (step >= 1) clearInterval(timer);
+                $(ele).css('opacity', `${ step }`);
+            }, INTERVAL_TIME);
+        }
+        fadeIn($("#container"), 1000);
+
+        // 回到顶部
+        let $html = $(document.documentElement),
+            $back = $(".back");
+        $(window).on('scroll', function () {
+            if ($html.height() <= $html.scrollTop()) {
+                $back.css("display", "block");
+            } else {
+                $back.css("display", "none");
+            }
+        });
+
+        let timer2 = null;
+        $back.on('click', function () {
+            let count = $html.scrollTop();
+            let step = count / (1000 / 10);
+            timer2 = setInterval(() => {
+                if (count <= 0) clearInterval(timer2);
+                count -= step;
+                $html.scrollTop(count);
+            }, 10);
+        });
+    </script>
+</body>
+
+</html>
