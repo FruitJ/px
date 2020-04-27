@@ -22,18 +22,19 @@ body {
     .mask {
         position: absolute;
         top: 0;
+        opacity: 0;
         z-index: 10;
         width: 238px;
         height: 238px;
-        // background-color: rgba(255,239,167, .5);
         background-color: rgba(255, 215, 0, .2);
     }
 }
 
 .scale-content {
+    display: inline-block;
     overflow: hidden;
     position: relative;
-    display: inline-block;
+    opacity: 0;
     margin-top: 20px;
     border: 1px solid #EEE;
     width: 545px;

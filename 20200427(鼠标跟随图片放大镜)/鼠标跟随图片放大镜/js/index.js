@@ -19,6 +19,7 @@ let content_l = content.offsetLeft, // 小盒子左偏移
     proportion_h = scaleContent.offsetHeight / content.offsetWidth; // 大盒子与小盒子高度比例
 
 content.addEventListener('mousemove', function (ev) {
+
     ev = ev || window.event;
     let x = ev.clientX; // 实时获取鼠标水平偏移
     let y = ev.clientY; // 实时获取鼠标垂直偏移
@@ -26,6 +27,7 @@ content.addEventListener('mousemove', function (ev) {
     y -= content_t + mask_h / 2; // 实时获取鼠标在小盒子内垂直偏移
     // 移动遮罩层
     mask.style.cssText = `
+    opacity: 1;
         top: ${ y}px;
         left: ${ x}px;
     `;
@@ -47,4 +49,15 @@ content.addEventListener('mousemove', function (ev) {
         top: -${y * proportion_h}px;
         left: -${x * proportion_w}px;
     `;
+}, false);
+
+
+content.addEventListener('mouseover', function () {
+
+    scaleContent.style.opacity = "1";
+    mask.style.opacity = "1";
+}, false);
+content.addEventListener('mouseout', function () {
+    mask.style.opacity = "0";
+    scaleContent.style.opacity = "0";
 }, false);
