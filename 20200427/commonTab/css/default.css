@@ -36,15 +36,15 @@
 }
 .JTab-container div.JTab-boards {
   box-sizing: border-box;
-  height: 91%;
+  height: 100%;
 }
 .JTab-container div.default-tab-boards {
   border: 1px solid #DDD;
 }
 .JTab-container div.default-tab-boards div {
   display: none;
-  padding: 15px 30px 30px 30px;
-  padding-bottom: 20px;
+  padding-top: 1px;
+  height: 100%;
 }
 .JTab-container div.default-tab-boards div.active {
   display: block;
