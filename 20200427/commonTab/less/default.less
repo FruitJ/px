@@ -1,0 +1,78 @@
+.JTab-container {
+    box-sizing: border-box;
+    margin: 20px auto;
+    width: 440px;
+    height: 425px;
+
+    ul.JTab-tabs {
+        box-sizing: border-box;
+        width: 100%;
+        height: 42px;
+    }
+
+
+    ul.default-tab-pageCard {
+        
+        // background-color: papayawhip;
+        li {
+            box-sizing: border-box;
+            display: inline-block;
+            margin-right: 5px;
+            margin-bottom: -1px;
+            padding: 15px 22px 7px;
+            a {
+                
+                
+                font-size: 14px;
+                font-weight: bolder;
+                color: #656A6D;
+            }
+            /* &:nth-child(1) {
+                border: 1px solid #DDD;
+                border-radius: 4px;
+                border-bottom-color: #FFF;
+            } */
+            &.active {
+                border: 1px solid #DDD;
+                border-radius: 4px;
+                border-bottom-color: #FFF; 
+            }
+            &.close {
+                border: none;
+            }
+        }
+    }
+
+
+    div.JTab-boards {
+        box-sizing: border-box;
+        height: 91%;
+    } 
+
+    div.default-tab-boards {
+        
+        // padding: 20px 15px 10px;
+        border: 1px solid #DDD;
+        
+        div {
+            display: none;
+            padding: 15px 30px 30px 30px;
+            padding-bottom: 20px;
+            &.active {
+                display: block;
+            }
+            &.close {
+                display: none;
+            }
+
+            img {
+                margin: 15px auto;
+                display: block;
+            }
+
+            p {
+                margin-top: 15px;
+            }
+        }
+    }
+}

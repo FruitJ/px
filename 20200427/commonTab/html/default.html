@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公共样式选项卡</title>
+    <!-- 导入 reset.min.css -->
+    <link rel="stylesheet" href="../css/reset.min.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <!-- 导入 common.css -->
+    <link rel="stylesheet" href="../css/default.css">
+</head>
+
+<body>
+    <div class="JTab-container" id="container"></div>
+
+    <script src="../js/JTab.js"></script>
+    <script>
+        let config = { // 默认配置项
+            // module: JTab.alias.MODULE_DEFAULT, // 选项卡模型
+            InitialIndex: 4,
+            style: { // 选项卡样式
+                pageCard: { // 页卡部分
+                    pos: JTab.alias.PAGECARD_POS_HORIZONTAL, // 页卡位置
+                    size: { // 页卡尺寸
+                        width: 640,
+                        height: 42,
+                    },
+                },
+                boards: { // 面板部分
+                    pic: { // 图片区域
+                        size: { // 图片尺寸
+                            width: 300,
+                        }
+                    },
+                    typesetting: JTab.alias.POS_BOTTOM, // 内容区域
+                    overflow: JTab.alias.OVERFLOW_AUTO,
+                },
+            },
+            data: [{ // 选项卡数据
+                title: "Hello JavaScript",
+                content: "Hello JavaScript",
+                titleIconUri: "&#xe6db;",
+                contentPicUri: "../img/content-1.png",
+                contentPicsSize: {
+                    width: 600,
+                    height: 345
+                },
+            }, { // 选项卡数据
+                title: "Hello Java",
+                content: "Hello Java",
+                titleIconUri: "&#xe6dc;",
+                contentPicUri: "../img/content-2.png",
+                contentPicsSize: {
+                    width: 600,
+                    height: 345
+                },
+            }, { // 选项卡数据
+                title: "Hello GO",
+                content: "Hello GO",
+                titleIconUri: "&#xe69b;",
+                contentPicUri: "../img/content-3.png",
+                contentPicsSize: {
+                    width: 600,
+                    height: 345
+                },
+            }, { // 选项卡数据
+                title: "Hello PHP",
+                content: "Hello PHP",
+                // titleIconUri: "&#xe69b;",
+                contentPicUri: "../img/content-3.png",
+                contentPicsSize: {
+                    width: 600,
+                    height: 345
+                },
+            }, ],
+            advancedOptions: { // 高级选项
+
+            },
+            isReplaceSkin: true, // 是否换肤
+            music: {
+                isMusic: true, // 是否播放音乐
+                musicQueue: ["../resource/不说再见(好妹妹).mp3"],
+            },
+            lifeCycle: {
+                componentDidMount(status, root) { // 组件已挂载
+                    console.log("-- componentDidMount start--"); 
+                    console.log(`组件已挂载 - 当前状态为: ${ status }`);
+                    console.log(this);
+                    console.log(root);
+                    console.log("-- componentDidMount end--");
+                },
+                componentWillUnMount(status, root) { // 组件卸载前
+                    console.log("-- componentWillUnMount start--");
+                    console.log(`组件即将卸载 - 当前状态为: ${ status }`);
+                    console.log(this);
+                    console.log(root);
+                    console.log("-- componentWillUnMount end--");
+                },
+                componentDidUnMount(status) { // 组件卸载后
+                    console.log("-- componentDidUnMount start--");
+                    console.log(`组件已经卸载 - 当前状态为: ${ status }`);
+                    console.log("-- componentDidUnMount end--");
+                }
+            },
+        };
+        new JT("#container", config);
+    </script>
+</body>
+
+</html>

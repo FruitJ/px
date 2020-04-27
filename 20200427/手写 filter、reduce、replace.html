@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重写 filter、reduce、replace</title>
+</head>
+
+<body>
+
+
+    <!-- 重写 filter -->
+            <script>
+        void(function (proto) {
+
+            function filter(fn, thisArg) {
+
+                const {
+                    length: LEN
+                } = this,
+                arr = [];
+                // thisArg = thisArg === null || thisArg === undefined ? window : Object(thisArg);
+                thisArg = thisArg == null ? window : Object(thisArg);
+                for (let i = 0; i < LEN; i++) {
+                    !!fn.apply(thisArg, [this[i], i, this]) ? arr.push(this[i]) : null;
+                }
+                return arr;
+            }
+            proto.myFilter = filter;
+        })(Array.prototype);
+
+        let arr = [1, 2, 3];
+        console.log(arr.myFilter((item, index) => { // 常规测试
+            return index > 1;
+        }, {
+            name: "FruitJ"
+        }));
+
+        console.log(arr.myFilter(function(item, index) { // this 测试
+            console.log(this);
+            return item > 2;
+        }, 1n));
+    </script>
+    <!-- 重写 reduce -->
+        <script>
+        void(function (proto) {
+
+            function reducer(config, fn) {
+                for (let i = 0; i < config.len; i++) {
+                    config.next = this[i];
+                    config.res = fn(config.prev, config.next, i, this);
+                    config.prev = config.res;
+                }
+                return config.res;
+            }
+            function reduce(fn, initVal) {
+                let config = { len: this.length, prev: 0, next: 0, res: null, };
+                config.prev = arguments.length > 1 ? initVal: this[0];
+                config.res = reducer.call(this, config, fn);
+                return config.res;
+            }
+            proto.myReduce = reduce;
+        })(Array.prototype);
+        let arr = [1, 2, 3];
+        console.log(arr.myReduce((prev, next, index, array) => {
+            console.log(prev, next, index, array);
+            return prev + next;
+        }, false));
+    </script>
+
+    <!-- 重写 replace -->
+    <script>
+        void((function (proto) {
+            function match(str, res, info) {
+                let front = str.substring(0, res.index);
+                let back = str.substring(res.index + res[0].length, str.length);
+                return `${front}${info}${back}`;
+            }
+
+            function format(params) {
+
+                let reg = /(\$+)/g;
+                str = params;
+                let res = reg.exec(str);
+                let arr = [];
+                while (res !== null) {
+                    arr.push({
+                        index: res.index,
+                        content: res[1],
+                    });
+                    res = reg.exec(str);
+                }
+                let len = 0;
+                let {
+                    length
+                } = str;
+                for (let i = 0; i < arr.length; i++) {
+                    let front = str.substring(0, arr[i].index - len);
+                    let back = str.substring(arr[i].index - len + arr[i].content.length, str.length);
+                    let num = arr[i].content.length - Number.parseInt(arr[i].content.length / 2);
+                    let temp = ``;
+                    for (let j = 0; j < num; j++) {
+                        temp += `$`;
+                    }
+                    str = `${front}${temp}${back}`;
+                    len = length - str.length;
+                }
+                return str;
+            }
+
+            function replace(reg, param) {
+                // 将 reg 转换为正则表达式
+                reg = new RegExp(reg);
+                let str = [...this].join("");
+                let res = reg.exec(str);
+                let copy_str = str;
+                let nStr = str;
+                let copy_reg = new RegExp(reg);
+                let len = 0;
+                let length = str.length;
+                let count = 1;
+                let tag = true;
+
+                if (!reg.global) {
+                    if (typeof param === "function" && typeof param.nodeType !== "number") {
+                        let arr = [];
+                        arr = res[1] === undefined ? [res[0], res.index, res.input] : [...str.match(reg),
+                            res.index, res.input
+                        ];
+                        str = match(str, res, param(...arr));
+                    } else {
+                        if (/^\$(?:[&`']|(?:[1-9][0-9]?))$/.test(param)) {
+                            reg.exec(str);
+                            let temp = RegExp[`${ param }`];
+                            if ((RegExp[`${ param }`] === '' || RegExp[`${ param }`] === undefined) &&
+                                /^\$[1-9][0-9]?$/.test(param)) {
+                                temp = param;
+                            }
+                            str = match(str, res, temp);
+                        } else if (param.includes("$")) {
+
+                            str = match(str, res, format(param));
+
+                        } else {
+
+                            str = match(str, res, param);
+                        }
+                    }
+                } else {
+                    while (res !== null) {
+                        count++;
+                        res = reg.exec(str);
+                    }
+
+                    let v = 0;
+                    for (let o = 0; o < count - 1; o++) {
+                        res = reg.exec(copy_str);
+                        // 替换
+                        if (typeof param === "function" && typeof param.nodeType !== "number") {
+                            let res = copy_reg.exec(str);
+                            let arr = [];
+                            res.input = copy_str;
+                            if (!str.includes("undefined")) {
+
+                                arr = res[1] === undefined ? [res[0], res.index, copy_str] : [res[0], res[
+                                    1], res.index - v * (copy_str.length), res.input
+                                ];
+                            } else {
+                                arr = res[1] === undefined ? [res[0], res.index, copy_str] : [...str.match(
+                                    reg), res.index - v * ("undefined".length - 1), res.input];
+
+                            }
+                            str = match(str, res, param(...arr));
+                            v++;
+                        } else {
+                            if (/^\$(?:[&`']|(?:[1-9][0-9]?))$/.test(param)) {
+                                let res = copy_reg.exec(copy_str);
+
+                                if (param === "$`") {
+                                    if (length > str.length) {
+
+                                        res.index = res.index - 1;
+                                        let front = str.substring(0, res.index);
+                                        let back = str.substring(res.index + 1, str.length);
+                                        str = `${front}${RegExp[`${ param }`]}${back}`;
+                                    } else {
+                                        str = match(str, res, RegExp[`${ param }`]);
+                                    }
+                                } else {
+
+                                    if (param === "$'") {
+                                        str = match(str, res, RegExp[`${ param }`]);
+                                    } else {
+
+                                        let res = copy_reg.exec(str);
+                                        let temp = RegExp[`${ param }`];
+
+                                        if ((RegExp[`${ param }`] === '' || RegExp[`${ param }`] ===
+                                                undefined) && /^\$[1-9][0-9]?$/.test(param)) {
+                                            temp = param;
+
+                                            if (temp.length >= 3) {
+                                                res.index -= 1;
+                                            }
+                                        }
+                                        if (res !== null) {
+                                            if (param.length >= 3) {
+                                                res.index -= copy_str.length;
+                                                str = match(str, res, temp);
+                                                let arr = str.split("");
+                                                arr.length = arr.length - copy_str.length;
+                                                nStr = arr.join("");
+                                                tag = false;
+                                                continue;
+                                            }
+                                            str = match(str, res, temp);
+                                        }
+                                    }
+                                }
+
+                            } else if (param.includes("$")) {
+                                str = match(str, res, format(param));
+                            } else {
+                                let res = copy_reg.exec(str);
+                                str = match(str, res, param);
+                            }
+                        }
+                    }
+                }
+
+                return tag ? str : nStr;
+            }
+            proto.myReplace = replace;
+        }))(String.prototype);
+        console.log("123".myReplace(/(\d)/g, (...args) => {
+            console.log(args);
+            // return null;
+        }));
+    </script>
+</body>
+
+</html>
