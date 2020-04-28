@@ -22,7 +22,7 @@ let content_l = content.offsetLeft, // 小盒子左偏移
 let prev = null;
 selector(corridorImgs[0], 0); // 初始状态
 content.addEventListener('mousemove', function (ev) {
-
+    
     ev = ev || window.event;
     let x = ev.clientX; // 实时获取鼠标水平偏移
     let y = ev.clientY; // 实时获取鼠标垂直偏移
