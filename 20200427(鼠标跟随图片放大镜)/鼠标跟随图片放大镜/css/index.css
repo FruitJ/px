@@ -39,3 +39,14 @@ body {
   position: absolute;
   display: inline-block;
 }
+.corridor {
+  position: absolute;
+  top: 390px;
+  left: 170px;
+}
+.corridor img {
+  border: 1px solid #EEE;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}

@@ -1,9 +1,11 @@
 // 获取元素
 let root = document.querySelector("#root"),
     content = root.querySelector(".content"),
-    mask = content.querySelector(".mask"),
+    contentImg = content.querySelector("img");
+mask = content.querySelector(".mask"),
     scaleContent = root.querySelector(".scale-content"),
-    scaleContentImg = scaleContent.querySelector("img");
+    scaleContentImg = scaleContent.querySelector("img"),
+    corridorImgs = root.querySelector(".corridor").querySelectorAll("img");
 
 let content_l = content.offsetLeft, // 小盒子左偏移
     content_t = content.offsetTop, // 小盒子上偏移
@@ -17,7 +19,8 @@ let content_l = content.offsetLeft, // 小盒子左偏移
     maxTop = content_h - mask_h, // 遮罩层垂直移动的最大阈值
     proportion_w = scaleContent.offsetWidth / content.offsetWidth, // 大盒子与小盒子宽度比例
     proportion_h = scaleContent.offsetHeight / content.offsetWidth; // 大盒子与小盒子高度比例
-
+let prev = null;
+selector(corridorImgs[0], 0); // 初始状态
 content.addEventListener('mousemove', function (ev) {
 
     ev = ev || window.event;
@@ -61,3 +64,17 @@ content.addEventListener('mouseout', function () {
     mask.style.opacity = "0";
     scaleContent.style.opacity = "0";
 }, false);
+[...corridorImgs].forEach((item, index) => {
+    item.addEventListener('click', function () {
+        selector(this, index);
+    }, false)
+});
+
+function selector(ele, index) {
+    if (prev !== null) prev.style.borderColor = "#EEE";
+    ele.style.borderColor = "gray";
+    // 获取索引
+    contentImg.src = `../img/qsmy-small-${index + 1}.jpg`;
+    scaleContentImg.src = `../img/qsmy-big-${index + 1}.jpg`;
+    prev = ele;
+}

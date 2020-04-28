@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菜单</title>
+    <style>
+        #ul {}
+
+        #ul ul {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="ul">
+        <li>
+            <span>一级菜单1</span>
+            <ul>
+                <li>
+                    <span>二级菜单1</span>
+                    <ul>
+                        <li>
+                            <span>三级菜单1</span>
+                        </li>
+                        <li>
+                            <span>三级菜单2</span>
+                            <ul>
+                                <li>
+                                    <span>四级菜单1</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <span>二级菜单2</span>
+                    <ul>
+                        <li>
+                            <span>三级菜单1</span>
+                        </li>
+                        <li>
+                            <span>三级菜单2</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span>一级菜单2</span>
+            <ul>
+                <li>
+                    <span>二级菜单1</span>
+                    <ul>
+                        <li>
+                            <span>三级菜单1</span>
+                        </li>
+                        <li>
+                            <span>三级菜单2</span>
+                            <ul>
+                                <li>
+                                    <span>四级菜单1</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <span>二级菜单2</span>
+                    <ul>
+                        <li>
+                            <span>三级菜单1</span>
+                        </li>
+                        <li>
+                            <span>三级菜单2</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span>一级菜单3</span>
+            <ul>
+                <li>
+                    <span>二级菜单1</span>
+                    <ul>
+                        <li>
+                            <span>三级菜单1</span>
+                        </li>
+                        <li>
+                            <span>三级菜单2</span>
+                            <ul>
+                                <li>
+                                    <span>四级菜单1</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <span>二级菜单2</span>
+                    <ul>
+                        <li>
+                            <span>三级菜单1</span>
+                        </li>
+                        <li>
+                            <span>三级菜单2</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+<!-- 
+        <script>
+        // 获取目标元素
+        let ul = document.querySelector("#ul");
+        const DISPLAY_BLOCK = "block",
+            DISPLAY_NONE = "none";
+        // 为 ul 绑定点击事件
+        ul.addEventListener('click', function (ev) {
+            ev = ev || window.event;
+            ev.target = ev.target || ev.srcElement;
+            if (ev.target.nodeName.toLowerCase() === "span") {
+                let temp = ev.target.nextElementSibling;
+                if (temp && temp.nodeName.toLowerCase() === "ul") {
+                    console.log(temp);
+                    
+                    if (window.getComputedStyle(temp, null)["display"] === DISPLAY_BLOCK) {
+                        temp.style.display = DISPLAY_NONE;
+                        [...temp.querySelectorAll("ul")].forEach((item) => {
+                            item.style.display = DISPLAY_NONE;
+                        });
+                        return;
+                    }
+                    temp.style.display = DISPLAY_BLOCK;
+                }
+            }
+        }, false);
+    </script> -->
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.min.js"></script> -->
+<!--     <script>
+        // 获取目标元素
+        let $ul = $("#ul");
+        const DISPLAY_BLOCK = "block",
+            DISPLAY_NONE = "none";
+        $ul.on('click', function (ev) {
+            ev = ev || window.event;
+            ev.target = ev.target || ev.srcElement;
+            let $ev = $(ev);
+            let $target = $(ev.target);
+
+            if ($target.get(0).nodeName.toLowerCase() === "span") {
+                let $temp = $target.next();
+                if ($temp && $temp.get(0).nodeName.toLowerCase() === "ul") {
+                    if ($temp.css("display") === DISPLAY_BLOCK) {
+                        $temp.css("display", DISPLAY_NONE);
+                        $temp.find("ul").each((index, item) => {
+                            $(item).css("display", DISPLAY_NONE);
+                        });
+                        return;
+                    }
+                    $temp.css("display", DISPLAY_BLOCK);
+                }
+            }
+        });
+    </script> -->
+</body>
+
+</html>
