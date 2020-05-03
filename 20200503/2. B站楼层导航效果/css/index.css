@@ -1,0 +1,42 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+section#section {
+  width: 100%;
+  height: 100%;
+  background-color: #F5F5F5;
+}
+section#section div {
+  font-size: 25px;
+  font-weight: bolder;
+}
+nav#sideNav {
+  position: fixed;
+  top: 100px;
+  right: 100px;
+  padding-top: 1px;
+  border-radius: 8px;
+  width: 100px;
+  height: 249px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+nav#sideNav ul {
+  margin: 18px auto;
+  width: 70px;
+}
+nav#sideNav ul li {
+  position: relative;
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 16px;
+  text-align: center;
+  color: #FFF;
+  transition: color 0.5s ease 0s;
+}
+nav#sideNav ul li:hover {
+  color: red;
+  transition: color 0.5s ease 0s;
+  cursor: pointer;
+}

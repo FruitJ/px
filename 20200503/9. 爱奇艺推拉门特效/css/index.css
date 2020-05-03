@@ -1,0 +1,34 @@
+#container {
+  position: relative;
+  margin: 20px auto;
+  width: 1285px;
+  height: 100px;
+}
+#container .item {
+  float: left;
+  position: relative;
+  margin-right: 5px;
+  width: 210px;
+  height: 100px;
+  transition: all 1s ease 0s;
+}
+#container .item img {
+  width: 100%;
+  height: 100%;
+}
+#container .item:nth-last-child(1) {
+  margin-right: 0;
+}
+#container .show {
+  position: absolute;
+  top: 0;
+  left: 215px;
+  width: 855px;
+  height: 100%;
+}
+#container .show img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}

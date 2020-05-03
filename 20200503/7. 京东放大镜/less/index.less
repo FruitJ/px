@@ -1,0 +1,58 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#root {
+    padding: 1px;
+}
+
+.content {
+    
+    display: inline-block;
+    position: relative;
+    top: 0;
+    margin: 20px 0 0 150px;
+    border: 1px solid #EEE;
+    vertical-align: top;
+    width: 350px;
+    height: 350px;
+
+    .mask {
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        z-index: 10;
+        width: 238px;
+        height: 238px;
+        background-color: rgba(255, 215, 0, .2);
+    }
+}
+
+.scale-content {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    margin-top: 20px;
+    border: 1px solid #EEE;
+    width: 545px;
+    height: 545px;
+
+    img {
+        position: absolute;
+        display: inline-block;
+    }
+}
+.corridor {
+    position: absolute;
+    top: 390px;
+    left: 170px;
+}
+.corridor img {
+    border: 1px solid #EEE;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}

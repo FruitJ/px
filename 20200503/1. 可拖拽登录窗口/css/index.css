@@ -1,0 +1,316 @@
+html,
+body {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+section#container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+section#container nav#nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  margin: 19px 0 1px 0;
+  padding-right: 96px;
+}
+section#container nav#nav a {
+  float: left;
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+section#container nav#nav a:nth-child(1) {
+  color: #f23f40;
+}
+section#container nav#nav a:nth-last-child(1) {
+  position: absolute;
+  padding: 0 5px;
+  top: -2.5px;
+  right: 10px;
+  width: 60px;
+  height: 24px;
+  font-size: 14px;
+  line-height: 24px;
+  color: #FFF;
+  background-color: #38F;
+}
+section#container header#header {
+  position: relative;
+  width: 100%;
+  height: 50%;
+}
+section#container header#header div.content {
+  margin: 0 auto;
+  width: 642px;
+  height: 100%;
+}
+section#container header#header div.content div.logo {
+  position: relative;
+  height: 61.8%;
+}
+section#container header#header div.content div.logo img {
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  margin-left: -135px;
+  width: 270px;
+  height: 129px;
+}
+section#container header#header div.content form {
+  position: relative;
+  padding-top: 1px;
+}
+section#container header#header div.content form span.input {
+  display: inline-block;
+  position: relative;
+  border-width: 1px 0 1px 1px;
+  border-color: #B6B6B6;
+  border-style: solid;
+  width: 539px;
+  height: 36px;
+}
+section#container header#header div.content form span.input span.camera {
+  display: block;
+  position: absolute;
+  top: 9px;
+  z-index: 10;
+  right: 16px;
+  width: 18px;
+  height: 16px;
+  background: url("https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_5606e8f.png") no-repeat;
+}
+section#container header#header div.content form span.input input {
+  border: 0;
+  margin: 6px 0 0 7px;
+  width: 526px;
+  height: 22px;
+}
+section#container header#header div.content form span.btn {
+  display: inline-block;
+  margin-left: -4px;
+  position: relative;
+  top: 3px;
+  width: 97px;
+  height: 37px;
+  background-color: lightgray;
+}
+section#container header#header div.content form span.btn button {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  color: #FFF;
+  background-color: #3385FF;
+}
+section#container main#main {
+  height: 167px;
+}
+section#container main#main div#qrcode {
+  position: relative;
+  margin: 0 auto;
+  width: 148px;
+  height: 164px;
+  background: url("https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/qrcode/zbios_old-09b6296ee6.png") 21px 0 no-repeat;
+}
+section#container main#main div#qrcode .qrcode-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 46px;
+}
+section#container main#main div#qrcode .qrcode-text .title {
+  font-size: 16px;
+  text-align: center;
+  color: #333;
+}
+section#container main#main div#qrcode .qrcode-text .sub-title {
+  height: 25px;
+  line-height: 25px;
+  font-size: 14px;
+  color: #999;
+}
+footer#footer {
+  position: absolute;
+  bottom: 0;
+  background-color: #FAFAFA;
+  width: 100%;
+  height: 40px;
+}
+footer#footer div.layer p {
+  display: inline-block;
+  margin-top: 12px;
+  margin-right: 20px;
+  height: 100%;
+  color: #9195a3;
+}
+footer#footer div.layer-left p:nth-child(1) {
+  margin-left: 30px;
+}
+footer#footer div.layer-right {
+  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+div.mask {
+  display: none;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+div.dialog {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 201;
+  width: 356px;
+  height: 429px;
+  background-color: #FFF;
+}
+div.dialog .title {
+  width: 356px;
+  height: 24px;
+  cursor: move;
+}
+div.dialog .title i.close {
+  display: block;
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  z-index: 202;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  font-style: normal;
+  font-size: 25px;
+  cursor: pointer;
+}
+div.dialog p.check-code {
+  padding-left: 118px;
+  margin-left: 28px;
+  margin-bottom: 15px;
+  width: 210px;
+  height: 32px;
+  font-size: 16px;
+  line-height: 32px;
+  background: url("https://passport.baidu.com/passApi/img/loginlogo.png") 0px -4px no-repeat;
+}
+div.dialog .body {
+  position: relative;
+  height: 406px;
+}
+div.dialog .body .qrcode {
+  position: relative;
+  padding-top: 24px;
+  height: 306px;
+}
+div.dialog .body .qrcode .code {
+  position: relative;
+  margin-left: 39px;
+  border: 1px solid #ECEDEE;
+  padding: 9px;
+  width: 136px;
+  height: 138px;
+}
+div.dialog .body .qrcode .code img {
+  width: 100%;
+  height: 100%;
+}
+div.dialog .body .qrcode .tip {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  width: 125px;
+  height: 156px;
+  background: url("https://passport.baidu.com/passApi/img/qrcodeLoginGuide.png") no-repeat center;
+}
+div.dialog .body p.active {
+  margin-top: 20px;
+  font-size: 16px;
+  text-align: center;
+}
+div.dialog .body ul {
+  margin-left: 40px;
+  padding-top: 16px;
+  width: 316px;
+  height: 21px;
+}
+div.dialog .body ul li {
+  float: left;
+  margin-left: 24px;
+  width: 72px;
+  height: 21px;
+  color: #999;
+  font-size: 12px;
+}
+div.dialog .body .footer {
+  position: absolute;
+  bottom: -30px;
+  margin-top: 40px;
+  width: 100%;
+  height: 60px;
+  font-size: 14px;
+  color: #2E82FF;
+  background-color: #F0F6FF;
+}
+div.dialog .body .footer p.user-login {
+  position: relative;
+  margin-left: 20px;
+  width: 80px;
+  height: 60px;
+  line-height: 60px;
+}
+div.dialog .body .footer span {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  margin: -4px;
+  left: 105px;
+  border-left: 1px solid #2E82FF;
+  width: 1px;
+  height: 8px;
+}
+div.dialog .body .footer p.method {
+  position: absolute;
+  top: 0;
+  left: 115px;
+  width: 72px;
+  height: 60px;
+  line-height: 70px;
+}
+div.dialog .body .footer p.method i {
+  display: inline-block;
+  margin-left: 10px;
+  width: 20px;
+  height: 18px;
+}
+div.dialog .body .footer p.method i.qq {
+  background: url("https://passport.baidu.com/passApi/img/loginv4.png") -6px -55px;
+}
+div.dialog .body .footer p.method i.weibo {
+  position: absolute;
+  top: 50%;
+  margin-top: -9px;
+  left: 25px;
+  background: url("https://passport.baidu.com/passApi/img/loginv4.png") -55px -33px;
+}
+div.dialog .body .footer div.right {
+  position: absolute;
+  top: 50%;
+  margin-top: -9.5px;
+  right: 10px;
+}
+div.active {
+  display: block;
+}

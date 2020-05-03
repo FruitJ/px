@@ -1,0 +1,43 @@
+#container {
+    position: relative;
+    margin: 20px auto;
+    width: 1285px;
+    height: 100px;
+    background-color: burlywood;
+
+    .item {
+        float: left;
+        position: relative;
+        // left: 0px;
+        margin-right: 5px;
+        width: 210px;
+        height: 100px;
+        background-color: aquamarine;
+        transition: all 1s ease 0s;
+
+        img {
+            width: 100%;
+            height: 100%; 
+        }
+    }
+    
+    .item:nth-last-child(1) {
+        margin-right: 0;
+    }
+    
+    .show {
+        position: absolute;
+        top: 0;
+        left: 215px;
+        width: 855px;
+        height: 100%;
+        background-color: bisque;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+    }
+}

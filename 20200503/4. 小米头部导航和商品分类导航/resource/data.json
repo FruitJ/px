@@ -1,0 +1,76 @@
+{
+    "title": ["小米手机", "Redmi 红米", "电视", "笔记本", "家电", "路由器", "智能硬件", "服务", "社区"],
+    "topNavList": {
+        "0": [{
+            "pic": "../img/v1-1.webp",
+            "name": "小米10 青春版 5G",
+            "price": 2099
+        }, {
+            "pic": "../img/v1-2.webp",
+            "name": "小米10 pro",
+            "price": 4999
+        }, {
+            "pic": "../img/v1-3.webp",
+            "name": "小米10",
+            "price": 3999
+        }, {
+            "pic": "../img/v1-4.png",
+            "name": "小米cc9",
+            "price": 1499
+        }, {
+            "pic": "../img/v1-5.png",
+            "name": "小米cc9e",
+            "price": 1299
+        }, {
+            "pic": "../img/v1-6.png",
+            "name": "小米cc9 美图定制版",
+            "price": 1999
+        }],
+        "1": [{
+            "pic": "../img/v2-1.webp",
+            "name": "Redmi K30 Pro",
+            "price": 2999
+        }, {
+            "pic": "../img/v2-2.webp",
+            "name": "Redmi K30 Pro 变焦版",
+            "price": 3799
+        }, {
+            "pic": "../img/v2-3.webp",
+            "name": "Redmi K30",
+            "price": 1599
+        }, {
+            "pic": "../img/v2-4.webp",
+            "name": "Redmi K30 5G",
+            "price": 1999
+        }, {
+            "pic": "../img/v2-5.webp",
+            "name": "Redmi 8A",
+            "price": 599
+        }, {
+            "pic": "../img/v2-6.webp",
+            "name": "Redmi Note 8",
+            "price": 866
+        }]
+    },
+    "sideTitle": ["手机 电话卡", "电视 盒子", "笔记本 显示器 平板"],
+    "sideNavList": {
+        "0": [{
+            "pic": "../img/v1-side-1.webp",
+            "title": "小米10 青春版"
+        }, {
+            "pic": "../img/v1-side-2.webp",
+            "title": "小米10"
+        }],
+        "1": [{
+            "pic": "../img/v2-side-1.webp",
+            "title": "Redmi 智能电视"
+        }, {
+            "pic": "../img/v2-side-2.webp",
+            "title": "小米电视5 pro"
+        }],
+        "2": [{
+            "pic": "../img/v3-side-1.webp",
+            "title": "RedmiBook13"
+        }]
+    }
+}

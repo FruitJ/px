@@ -1,0 +1,19 @@
+[{
+    "smallPic": "../img/v1-small.jpg",
+    "bigPic": "../img/v1-big.jpg"
+}, {
+    "smallPic": "../img/v2-small.jpg",
+    "bigPic": "../img/v2-big.jpg"
+}, {
+    "smallPic": "../img/v3-small.jpg",
+    "bigPic": "../img/v3-big.jpg"
+}, {
+    "smallPic": "../img/v4-small.jpg",
+    "bigPic": "../img/v4-big.jpg"
+}, {
+    "smallPic": "../img/v5-small.jpg",
+    "bigPic": "../img/v5-big.jpg"
+}, {
+    "smallPic": "../img/v6-small.jpg",
+    "bigPic": "../img/v6-big.jpg"
+}]
